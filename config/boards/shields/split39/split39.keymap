@@ -95,16 +95,16 @@
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp FSLH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &kp DEL  &kp SPACE     &to TAIPO  &kp RET
+&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &kp DEL  &kp SPACE   &tog TAIPO  &kp RET
                 >;
         };
 
-        lower_layer {
+        taipo_layer {
                 bindings = <
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none              &none  &none   &to DEFAULT   &none  
+&none  &none  &none  &none  &none  &none              &none  &none   &tog TAIPO   &none  
                 >;
         };
 
