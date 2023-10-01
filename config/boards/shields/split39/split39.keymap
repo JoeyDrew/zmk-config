@@ -9,10 +9,80 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LOWER   1
-#define RAISE   2
+#define TAIPO   1
+
+// CONFIG
+#define COMBO_TIMEOUT 70
+#define COMBO_LAYERS 1
+#define STICKY_TIMEOUT 500
+
+// LEFT SIDE
+#define TLI 3 // TOP Index
+#define TLM 2 // TOP Middle
+#define TLR 1 // TOP Ring
+#define TLP 0 // TOP Pinky
+#define BLI 8 // BOTTOM
+#define BLM 7 // BOTTOM
+#define BLR 6 // BOTTOM
+#define BLP 5 // BOTTOM
+#define LOT 19 // O-THUMB
+#define LIT 18 // I-THUMB
+
+// extra defs for 3rd and 4th rows
+
+#define LOIT 4 // Left Outer Index Top
+#define LOIB 9 // Left Outer Index Bottom
+#define LAP 10 // Left Aux Pinky
+#define LAR 11 // Left Aux Ring
+#define LAM 12 // Left Aux Middle
+#define LAI 13 // Left Aux Index
+#define LOIA 14 // Left Outer Index Aux
+#define LMP 15 // Left Mod Pinky
+#define LMR 16 // Left Mod Ring
+#define LMM 17 // Left Mod Middle
+
+// RIGHT SIDE
+#define TRI 21 // TOP
+#define TRM 22 // TOP
+#define TRR 23 // TOP
+#define TRP 24 // TOP
+#define BRI 26 // BOTTOM
+#define BRM 27 // BOTTOM
+#define BRR 28 // BOTTOM
+#define BRP 29 // BOTTOM
+#define ROT 35 // O-THUMB
+#define RIT 36 // I-THUMB
+
+// extra defs for 3rd and 4th rows
+
+#define ROIT 20 // Right Outer Index Top
+#define ROIB 25 // Right Outer Index Bottom
+#define RAP 34 // Right Aux Pinky
+#define RAR 33 // Right Aux Ring
+#define RAM 32 // Right Aux Middle
+#define RAI 31 // Right Aux Index
+#define ROIA 30 // Right Outer Index Aux
+#define RMP 38 // Right Mod Pinky
+#define RMR 37 // Right Mod Ring
+
+&sk {
+    release-after-ms = <STICKY_TIMEOUT>;
+    quick-release;
+};
 
 / {
+
+    combos {
+      compatible = "zmk,combos";
+      #include "taipo.dtsi"
+
+      combo_taipo {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&tog TAIPO>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,41 +91,23 @@
 // | Q |  W  |  F  |  P  |  B |      |  J  |  L  |  U   |  Y  |  ;  |
 // | A |  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
 // | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
-// |CMD| CTL | ALT |SHFT |LOW |      |  HI | SPC |    DEL   |   RET   |
+// |CMD| CTL | ALT |SHFT |BSPC|      |  HI | SPC |    DEL   |   RET   |
                 bindings = <
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp FSLH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &mo LOWER     &mo RAISE  &kp SPACE     &kp DEL  &kp RET
+&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE     &kp DEL  &kp RET
                 >;
         };
 
         lower_layer {
-// -----------------------------------------------------------------------------------------
-// | Q |  W  |  F  |  P  |  B |      |  J  |  L  |  U   |  Y  | BSPC|
-// |BTC|  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
-// |BT0|BT1  |BT2  |BT3  |BT4 |      |  M  |  H  |  ,   |  .  |  /  |
-// |CMD| CTL | ALT |SHFT |LOW |      |  HI | SPC |    DEL   |   RET   |
                 bindings = <
-&kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp BSPC  
-&bt BT_CLR &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                     &kp M  &kp H &kp COMMA  &kp DOT &kp FSLH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &mo LOWER     &mo RAISE  &kp SPACE     &kp DEL  &kp RET
+&none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none              &none  &none     &none     &none  
                 >;
         };
 
-        raise_layer {
-// -----------------------------------------------------------------------------------------
-// | 1 |  2  |  3  |  4  |  5 |      |  6  |  7  |  8   |  9  |  0  |
-// | A |  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
-// | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
-// |CMD| CTL | ALT |SHFT |LOW |      |  HI | SPC |    DEL   |   RET   |
-                bindings = <
-&kp N1   &kp N2 &kp N3 &kp N4 &kp N5                   &kp N6  &kp N7 &kp N8  &kp N9     &kp N0 
-&kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
-&kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp FSLH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &mo LOWER     &mo RAISE  &kp SPACE     &kp DEL  &kp RET
-                >;
-        };
     };
 };
