@@ -104,7 +104,7 @@
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none              &none  &none     &to TAIPO     &none  
+&none  &none  &none  &none  &none  &none              &none  &none   &to DEFAULT   &none  
                 >;
         };
 
