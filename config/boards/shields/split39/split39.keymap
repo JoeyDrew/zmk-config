@@ -75,6 +75,7 @@
     combos {
       compatible = "zmk,combos";
       #include "taipo.dtsi"
+    };
 
     keymap {
         compatible = "zmk,keymap";
