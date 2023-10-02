@@ -13,7 +13,7 @@
 #define TAIPO   2
 
 // CONFIG
-#define COMBO_TIMEOUT 25
+#define COMBO_TIMEOUT 5000
 #define COMBO_LAYERS 2
 #define STICKY_TIMEOUT 500
 
