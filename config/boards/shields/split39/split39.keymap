@@ -79,12 +79,12 @@
 
     combos {
       compatible = "zmk,combos";
-      // #include "taipo.dtsi"
+      #include "taipo.dtsi"
 
       combo_l_esc { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp ESC>; \
-            key-positions = <LOT BLP BLR>; \
+            key-positions = <LOT LAP LAR>; \
         };
 
       combo_l_n0 { \
