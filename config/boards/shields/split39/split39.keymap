@@ -99,7 +99,7 @@
         combo_l_n1 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N1>; \
-            key-positions = <ROT BRI BLR>; \
+            key-positions = <ROT BRI BRR>; \
             layers = <0>; \
         };
 
