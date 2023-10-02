@@ -13,7 +13,7 @@
 #define TAIPO   2
 
 // CONFIG
-#define COMBO_TIMEOUT 5000
+#define COMBO_TIMEOUT 30
 #define COMBO_LAYERS 2
 #define STICKY_TIMEOUT 500
 
@@ -85,75 +85,75 @@
       combo_l_esc { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp ESC>; \
-            key-positions = <LOT LAP LAR>; \
+            key-positions = <ROT RAP RAR>; \
             layers = <0>; \
         };
 
       combo_l_n0 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N0>; \
-            key-positions = <LOT BLI BLM>; \
+            key-positions = <ROT BRI BRM>; \
             layers = <0>; \
         };
 
         combo_l_n1 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N1>; \
-            key-positions = <LOT BLI BLR>; \
+            key-positions = <ROT BRI BLR>; \
             layers = <0>; \
         };
 
         combo_l_n2 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N2>; \
-            key-positions = <LOT BLR BLM>; \
+            key-positions = <ROT BRR BRM>; \
             layers = <0>; \
         };
 
         combo_l_n3 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N3>; \
-            key-positions = <LOT BLP BLM>; \
+            key-positions = <ROT BRP BRM>; \
             layers = <0>; \
         };
 
         combo_l_n4 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N4>; \
-            key-positions = <LOT BLP BLR>; \
+            key-positions = <ROT BRP BRR>; \
             layers = <0>; \
         };
 
         combo_l_n5 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N5>; \
-            key-positions = <LOT TLI TLM>; \
+            key-positions = <ROT TRI TRM>; \
             layers = <0>; \
         };
 
         combo_l_n6 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N6>; \
-            key-positions = <LOT TLI TLR>; \
+            key-positions = <ROT TRI TRR>; \
         };
 
         combo_l_n7 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N7>; \
-            key-positions = <LOT TLR TLM>; \
+            key-positions = <ROT TRR TRM>; \
         };
 
         combo_l_n8 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N8>; \
-            key-positions = <LOT TLP TLM>; \
+            key-positions = <ROT TRP TRM>; \
             layers = <0>; \
         };
 
         combo_l_n9 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N9>; \
-            key-positions = <LOT TLP TLR>; \
+            key-positions = <ROT TRP TRR>; \
             layers = <0>; \
         };
     };
@@ -178,7 +178,7 @@
         raise_layer {
                 bindings = <
 &bt BT_CLR  &none  &none  &none  &none                &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none                &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none                &none  &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none       &none &none  &none  &none  &none
 &none  &none  &none  &none  &none                &none  &none   &tog TAIPO   &none  
                 >;
