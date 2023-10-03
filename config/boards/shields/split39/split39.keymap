@@ -170,7 +170,7 @@
                 bindings = <
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
-&kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp FSLH
+&kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
 &kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &tog TAIPO  &kp RET
                 >;
         };
@@ -178,7 +178,7 @@
         raise_layer {
                 bindings = <
 &bt BT_CLR  &none  &none  &none  &none           &none  &none  &none &none  &none
-&none  &none  &none  &none  &none                &none  &none  &none &none  &none
+&none  &none  &none  &none  &none                &none  &none  &none &none  &kp APOS
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none       &none &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
 &none  &none  &none  &none  &none                &none  &none   &tog TAIPO   &none  
                 >;
