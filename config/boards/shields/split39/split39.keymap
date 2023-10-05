@@ -86,7 +86,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tog TAIPO>, <&kp GAME>;
+            bindings = <&tog TAIPO>, <&tog GAME>;
         };
     };
 
