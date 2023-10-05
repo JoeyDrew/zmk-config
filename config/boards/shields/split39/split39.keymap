@@ -8,9 +8,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// layers
 #define DEFAULT 0
 #define RAISE   1
-#define TAIPO   2
+#define GAME  2
+#define TAIPO   3
 
 // CONFIG
 #define COMBO_TIMEOUT 30
@@ -77,6 +79,16 @@
 };
 
 / {
+
+    behaviors {
+        td0: layer_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&tog TAIPO>, <&kp GAME>;
+        };
+    };
 
     combos {
       compatible = "zmk,combos";
@@ -166,12 +178,12 @@
 // | Q |  W  |  F  |  P  |  B |      |  J  |  L  |  U   |  Y  |  ;  |
 // | A |  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
 // | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
-// |CMD| CTL | ALT |SHFT |BSPC|      |  HI | SPC |    DEL   |   RET   |
+// |CMD| CTL | ALT |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
                 bindings = <
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &tog TAIPO  &kp RET
+&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &td0  &kp RET
                 >;
         };
 
@@ -180,7 +192,16 @@
 &bt BT_CLR  &none  &none  &none  &none           &none  &none  &none &none  &none
 &none  &none  &none  &none  &none                &none  &none  &none &none  &kp APOS
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none       &none &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
-&none  &none  &none  &none  &none                &none  &none   &tog TAIPO   &none  
+&none  &none  &none  &none  &none                &none  &none   &td0   &none  
+                >;
+        };
+
+        game_layer {
+                bindings = <
+&kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
+&kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
+&kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
+&kp LBKT &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &td0  &kp RET
                 >;
         };
 
