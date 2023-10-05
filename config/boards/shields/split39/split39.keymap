@@ -16,7 +16,7 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 30
-#define COMBO_LAYERS 2
+#define COMBO_LAYERS 3
 #define STICKY_TIMEOUT 500
 
 // LEFT SIDE
