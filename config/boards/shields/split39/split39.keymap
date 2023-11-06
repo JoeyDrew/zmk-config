@@ -13,6 +13,7 @@
 #define RAISE   1
 #define GAME  2
 #define TAIPO   3
+#define TEST 4
 
 // CONFIG
 #define COMBO_TIMEOUT 30
