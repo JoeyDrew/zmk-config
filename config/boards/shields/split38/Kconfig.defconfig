@@ -1,14 +1,14 @@
-if SHIELD_SPLIT39_LEFT
+if SHIELD_SPLIT38_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "split39"
+    default "split38"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_SPLIT39_LEFT || SHIELD_SPLIT39_RIGHT
+if SHIELD_SPLIT38_LEFT || SHIELD_SPLIT38_RIGHT
 
 config ZMK_SPLIT
     default y

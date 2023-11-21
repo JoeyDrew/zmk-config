@@ -28,8 +28,8 @@
 #define BLM 12 // BOTTOM
 #define BLR 11 // BOTTOM
 #define BLP 10 // BOTTOM
-#define LOT 34 // O-THUMB
-#define LIT 33 // I-THUMB
+#define LOT 33 // O-THUMB
+#define LIT 32 // I-THUMB
 
 // extra defs for 3rd and 4th rows
 
@@ -42,7 +42,6 @@
 #define LOIA 24 // Left Outer Index Aux
 #define LMP 30 // Left Mod Pinky
 #define LMR 31 // Left Mod Ring
-#define LMM 32 // Left Mod Middle
 
 // RIGHT SIDE
 #define TRI 6 // TOP
@@ -71,7 +70,7 @@
 // | 0  |  1  |  2  |  3  |  4  |      |  5  |  6  |  7   |  8  |  9  |
 // | 10 |  11 |  12 |  13 |  14 |      |  15 |  16 |  17  |  18 |  19 |
 // | 20 |  21 |  22 |  23 |  24 |      |  25 |  26 |  27  |  28 |  29 |
-// | 30 |  31 |  32 |  33 |  34 |      |  35 |  36 |    37   |   38   |
+// |   30  |   31   |  32 |  33 |      |  34 |  35 |   36   |   37    |
 
 &sk {
     release-after-ms = <STICKY_TIMEOUT>;
@@ -178,12 +177,12 @@
 // | Q |  W  |  F  |  P  |  B |      |  J  |  L  |  U   |  Y  |  ;  |
 // | A |  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
 // | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
-// |CMD| CTL | ALT |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
+// |  CMD  |  CTL  |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
                 bindings = <
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LCMD &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &td0  &kp RET
+&kp LCMD &kp LCTL &kp LSHFT &kp BSPC             &mo RAISE  &kp SPACE   &td0  &kp RET
                 >;
         };
 
@@ -201,7 +200,7 @@
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LBKT &kp LCTL &kp LALT &kp LSHFT &kp BSPC     &mo RAISE  &kp SPACE   &td0  &kp RET
+&kp LBKT &kp LCTL &kp LSHFT &kp BSPC              &mo RAISE  &kp SPACE   &td0  &kp RET
                 >;
         };
 

@@ -14,9 +14,9 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: split39_left
+    shield: split38_left
   - board: nice_nano_v2
-    shield: split39_right
+    shield: split38_right
   - board: nice_nano_v2
     shield: settings_reset
 
