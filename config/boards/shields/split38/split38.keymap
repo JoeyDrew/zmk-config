@@ -52,8 +52,8 @@
 #define BRM 17 // BOTTOM
 #define BRR 18 // BOTTOM
 #define BRP 19 // BOTTOM
-#define ROT 35 // O-THUMB
-#define RIT 36 // I-THUMB
+#define ROT 34 // O-THUMB
+#define RIT 35 // I-THUMB
 
 // extra defs for 3rd and 4th rows
 
@@ -64,8 +64,8 @@
 #define RAM 27 // Right Aux Middle
 #define RAI 26 // Right Aux Index
 #define ROIA 25 // Right Outer Index Aux
-#define RMP 38 // Right Mod Pinky
-#define RMR 37 // Right Mod Ring
+#define RMP 37 // Right Mod Pinky
+#define RMR 36 // Right Mod Ring
 
 // | 0  |  1  |  2  |  3  |  4  |      |  5  |  6  |  7   |  8  |  9  |
 // | 10 |  11 |  12 |  13 |  14 |      |  15 |  16 |  17  |  18 |  19 |
@@ -96,7 +96,7 @@
       combo_l_esc { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp ESC>; \
-            key-positions = <ROT RAP RAR>; \
+            key-positions = <BRM BRR BRP>; \
             layers = <0>; \
         };
 
@@ -182,7 +182,7 @@
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LCMD &kp LCTL &kp LSHFT &kp BSPC             &mo RAISE  &kp SPACE   &td0  &kp RET
+&kp LCMD &kp LCTL &kp LSHFT &kp BSPC              &mo RAISE  &kp SPACE   &td0  &kp RET
                 >;
         };
 
@@ -191,7 +191,7 @@
 &bt BT_CLR  &none  &none  &none  &none           &none  &none  &none &none  &none
 &none  &none  &none  &none  &none                &none  &none  &none &none  &kp APOS
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none       &none &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
-&none  &none  &none  &none  &none                &none  &none   &td0   &none  
+   &none    &none    &none  &none                &none  &none   &td0   &none  
                 >;
         };
 
@@ -209,7 +209,7 @@
 &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
 &none  &none  &none  &none  &none              &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none              &none  &none   &tog TAIPO   &none
+   &none    &none    &none  &none              &none  &none   &tog TAIPO   &none
                 >;
         };
 
