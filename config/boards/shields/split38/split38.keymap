@@ -100,8 +100,6 @@
             layers = <0>; \
         };
 
-    # Numbers
-
       combo_l_n0 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N0>; \
