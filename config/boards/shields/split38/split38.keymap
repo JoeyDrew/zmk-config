@@ -100,6 +100,8 @@
             layers = <0>; \
         };
 
+    # Numbers
+
       combo_l_n0 { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&kp N0>; \
@@ -188,9 +190,9 @@
 
         raise_layer {
                 bindings = <
-&bt BT_CLR  &none  &none  &none  &none           &none  &none  &none &none  &none
-&none  &none  &none  &none  &none                &none  &none  &none &none  &kp APOS
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none       &none &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
+&bt BT_CLR  &none  &none  &none  &none           &none  &none  &kp UP &none  &none
+&none  &none  &none  &none  &none                &none  &kp LEFT  &kp DOWN &kp RIGHT  &kp APOS
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none &kp TAB &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
    &none    &none    &none  &none                &none  &none   &td0   &none  
                 >;
         };
