@@ -11,8 +11,9 @@
 // layers
 #define DEFAULT 0
 #define RAISE   1
-#define GAME  2
-#define TAIPO   3
+#define LOWER 2
+#define GAME  3
+#define TAIPO   4
 
 // CONFIG
 #define COMBO_TIMEOUT 30
@@ -86,6 +87,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&tog TAIPO>, <&tog GAME>;
+        };
+
+        grq: grave_q {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp GRAVE>;
+            mods = <(MOD_LGUI)>;
         };
     };
 
@@ -179,10 +187,10 @@
 // | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
 // |  CMD  |  CTL  |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
                 bindings = <
-&kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
-&kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
-&kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LCMD &kp LCTL &kp LSHFT &kp BSPC              &mo RAISE  &kp SPACE   &td0  &kp RET
+&grq  &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
+&kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
+&kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
+&kp LCTL &kp LALT &kp LSHFT &mt LCMD BSPC        &mo RAISE  &lt LOWER SPACE   &td0  &kp RET
                 >;
         };
 
@@ -194,6 +202,16 @@
    &none    &none    &none  &none                &none  &none   &td0   &none  
                 >;
         };
+
+         lower_layer {
+                bindings = <
+&bt BT_CLR  &none  &none  &none  &none           &none  &kp N7  &kp N8 &kp N9  &none
+&none  &none  &none  &none  &none                &none  &kp N4  &kp N5 &kp N6  &kp MINUS
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3  &none &kp N0 &kp N1  &kp N2  &kp N3  &kp DOT
+   &none    &none  &kp LSHFT  &none              &none  &none   &td0   &none  
+                >;
+        };
+
 
         game_layer {
                 bindings = <
