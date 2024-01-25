@@ -95,7 +95,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <120>;
-            bindings = <&kp LCMD>, <&kp BSPC>;
+            bindings = <LCMD, BSPC>;
         };
 
         splt: space_layer_tap{
@@ -104,7 +104,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <120>;
-            bindings = <&mo LOWER>, <&kp SPACE>;
+            bindings = <&mo LOWER, SPACE>;
         };
 
 
