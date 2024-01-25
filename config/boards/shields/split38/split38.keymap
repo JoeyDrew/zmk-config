@@ -98,6 +98,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        lt_spc: layer_tap_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_BACKSPACE_DELETE";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <120>;
+            bindings = <&mo>, <&kp>;
+        };
+
         grctl: grave_ctl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -132,7 +142,7 @@
 &kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&grctl &kp LALT &kp LSHFT &ht LCMD BSPC               &mo RAISE  &ht &mo LOWER SPACE &esctd  &kp RET
+&grctl &kp LALT &kp LSHFT &ht LCMD BSPC               &mo RAISE  &lt_spc LOWER SPACE &esctd  &kp RET
                 >;
         };
 
