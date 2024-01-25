@@ -81,18 +81,37 @@
 / {
 
     behaviors {
-        td0: layer_tap_dance {
+        esctd: layer_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tog TAIPO>, <&tog GAME>;
+            bindings = <&kp ESC>, <&tog TAIPO>, <&tog GAME>;
         };
 
-        grq: grave_q {
+        bsmt: backspace_mod_tap{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <120>;
+            bindings = <&kp LCMD>, <&kp BSPC>;
+        };
+
+        splt: space_layer_tap{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <120>;
+            bindings = <&mo LOWER>, <&kp SPACE>;
+        };
+
+
+        grctl: grave_ctl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp GRAVE>;
+            bindings = <&kp LCTL>, <&kp GRAVE>;
             mods = <(MOD_LGUI)>;
         };
     };
@@ -108,73 +127,6 @@
             layers = <DEFAULT GAME>; \
         };
 
-      combo_l_n0 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N0>; \
-            key-positions = <ROT BRI BRM>; \
-            layers = <0>; \
-        };
-
-        combo_l_n1 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N1>; \
-            key-positions = <ROT BRI BRR>; \
-            layers = <0>; \
-        };
-
-        combo_l_n2 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N2>; \
-            key-positions = <ROT BRR BRM>; \
-            layers = <0>; \
-        };
-
-        combo_l_n3 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N3>; \
-            key-positions = <ROT BRP BRM>; \
-            layers = <0>; \
-        };
-
-        combo_l_n4 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N4>; \
-            key-positions = <ROT BRP BRR>; \
-            layers = <0>; \
-        };
-
-        combo_l_n5 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N5>; \
-            key-positions = <ROT TRI TRM>; \
-            layers = <0>; \
-        };
-
-        combo_l_n6 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N6>; \
-            key-positions = <ROT TRI TRR>; \
-        };
-
-        combo_l_n7 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N7>; \
-            key-positions = <ROT TRR TRM>; \
-        };
-
-        combo_l_n8 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N8>; \
-            key-positions = <ROT TRP TRM>; \
-            layers = <0>; \
-        };
-
-        combo_l_n9 { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp N9>; \
-            key-positions = <ROT TRP TRR>; \
-            layers = <0>; \
-        };
     };
 
     keymap {
@@ -187,10 +139,10 @@
 // | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
 // |  CMD  |  CTL  |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
                 bindings = <
-&grq  &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
+&kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LCTL &kp LALT &kp LSHFT &mt LCMD BSPC        &mo RAISE  &lt LOWER SPACE   &td0  &kp RET
+&grctl &kp LALT &kp LSHFT &bsmt                &mo RAISE  &splt &esctd  &kp RET
                 >;
         };
 
@@ -199,16 +151,16 @@
 &bt BT_CLR  &none  &none  &none  &none           &kp C_PP  &kp C_PREV  &kp UP &none  &kp C_NEXT
 &none  &none  &none  &none  &none                &none  &kp LEFT  &kp DOWN &kp RIGHT  &kp APOS
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none &kp TAB &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
-   &none    &none    &none  &none                &none  &none   &td0   &none  
+   &none    &none    &none  &none                &none  &none   &esctd   &none  
                 >;
         };
 
          lower_layer {
                 bindings = <
-&bt BT_CLR  &none  &none  &none  &none           &none  &kp N7  &kp N8 &kp N9  &none
-&none  &none  &none  &none  &none                &none  &kp N4  &kp N5 &kp N6  &kp MINUS
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3  &none &kp N0 &kp N1  &kp N2  &kp N3  &kp DOT
-   &none    &none  &kp LSHFT  &none              &none  &none   &td0   &none  
+&bt BT_CLR  &none  &none  &none  &none           &none  &kp N7  &kp N8 &kp N9  &kp MINUS
+&none  &none  &none  &none  &none                &none  &kp N4  &kp N5 &kp N6  &kp DOT
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3  &none &none &kp N0  &kp N1  &kp N2  &kp N3
+   &none    &none  &kp LSHFT  &none              &none  &none   &esctd   &none  
                 >;
         };
 
@@ -218,7 +170,7 @@
 &kp Q   &kp W &kp F &kp P &kp B                   &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                     &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                     &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp LBKT &kp LCTL &kp LSHFT &kp BSPC              &mo RAISE  &kp SPACE   &td0  &kp RET
+&kp LBKT &kp LCTL &kp LSHFT &kp BSPC              &mo RAISE  &kp SPACE   &esctd  &kp RET
                 >;
         };
 
