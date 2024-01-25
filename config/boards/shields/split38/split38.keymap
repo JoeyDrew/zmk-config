@@ -89,24 +89,14 @@
             bindings = <&kp ESC>, <&tog TAIPO>, <&tog GAME>;
         };
 
-        bsmt: backspace_mod_tap{
+        ht: tap_pref_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
             quick-tap-ms = <120>;
-            bindings = <LCMD, BSPC>;
+            bindings = <&kp>, <&kp>;
         };
-
-        splt: space_layer_tap{
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <120>;
-            bindings = <&mo LOWER, SPACE>;
-        };
-
 
         grctl: grave_ctl {
             compatible = "zmk,behavior-mod-morph";
@@ -142,7 +132,7 @@
 &kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&grctl &kp LALT &kp LSHFT &bsmt                &mo RAISE  &splt &esctd  &kp RET
+&grctl &kp LALT &kp LSHFT &ht LCMD BSPC               &mo RAISE  &ht &mo LOWER SPACE &esctd  &kp RET
                 >;
         };
 
