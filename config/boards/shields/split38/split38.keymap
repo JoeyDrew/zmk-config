@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <120>;
             bindings = <&kp>, <&kp>;
         };
@@ -103,7 +103,7 @@
             label = "LAYER_TAP_BACKSPACE_DELETE";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <400>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <120>;
             bindings = <&mo>, <&kp>;
         };
@@ -151,7 +151,7 @@
 &bt BT_CLR  &none  &none  &none  &none           &kp C_PP  &kp C_PREV  &kp UP &none  &kp C_NEXT
 &none  &none  &none  &none  &none                &none  &kp LEFT  &kp DOWN &kp RIGHT  &kp APOS
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none &kp TAB &none  &kp LC(LEFT)  &kp LC(RIGHT)  &none
-   &none    &none    &none  &none                &none  &none   &esctd   &none  
+&grctl &kp LALT &kp LSHFT &ht LCMD BSPC          &none  &none   &esctd   &none  
                 >;
         };
 
@@ -160,7 +160,7 @@
 &bt BT_CLR  &none  &none  &none  &none           &none  &kp N7  &kp N8 &kp N9  &kp MINUS
 &none  &none  &none  &none  &none                &none  &kp N4  &kp N5 &kp N6  &kp DOT
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3  &none &none &kp N0  &kp N1  &kp N2  &kp N3
-   &none    &none  &kp LSHFT  &none              &none  &none   &esctd   &none  
+&grctl &kp LALT &kp LSHFT &ht LCMD BSPC          &none  &none   &esctd   &none  
                 >;
         };
 
