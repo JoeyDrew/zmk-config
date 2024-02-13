@@ -17,7 +17,7 @@
 #define TAIPO   4
 
 // CONFIG
-#define COMBO_TIMEOUT 30
+#define COMBO_TIMEOUT 50
 #define COMBO_LAYERS 3
 #define STICKY_TIMEOUT 500
 
@@ -87,7 +87,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&tog TAIPO>, <&tog GAME>;
+            bindings = <&kp ESC>, <&tog TAIPO>;
         };
 
         ht: tap_pref_hold_tap {
@@ -121,6 +121,13 @@
     combos {
       compatible = "zmk,combos";
       #include "taipo.dtsi"
+
+      combo_toggle_taipo{ \
+            timeout-ms = <COMBO_TIMEOUT>; \
+            bindings = <&tog GAME>; \
+            key-positions = <BRM BRR BRP>; \
+            layers = <DEFAULT GAME>; \
+        };
 
       combo_l_esc { \
             timeout-ms = <COMBO_TIMEOUT>; \
