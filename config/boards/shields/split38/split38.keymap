@@ -18,7 +18,7 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 50
-#define COMBO_LAYERS 3
+#define COMBO_LAYERS 4
 #define STICKY_TIMEOUT 500
 
 // LEFT SIDE
@@ -122,20 +122,12 @@
       compatible = "zmk,combos";
       #include "taipo.dtsi"
 
-      combo_toggle_taipo{ \
+      combo_toggle_game { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&tog GAME>; \
             key-positions = <BRM BRR BRP>; \
             layers = <DEFAULT GAME>; \
         };
-
-      combo_l_esc { \
-            timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&kp ESC>; \
-            key-positions = <BRM BRR BRP>; \
-            layers = <DEFAULT GAME>; \
-        };
-
     };
 
     keymap {
