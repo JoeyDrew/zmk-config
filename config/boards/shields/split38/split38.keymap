@@ -31,43 +31,6 @@
 
 / {
 
-    behaviors {
-        esctd: layer_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&tog TAIPO>;
-        };
-
-        ht: tap_pref_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <400>;
-            quick-tap-ms = <120>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        lt_spc: layer_tap_space {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_BACKSPACE_DELETE";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        grctl: grave_ctl {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LCTL>, <&kp GRAVE>;
-            mods = <(MOD_LGUI)>;
-        };
-    };
-
     combos {
       compatible = "zmk,combos";
       #include "chords.dtsi"
