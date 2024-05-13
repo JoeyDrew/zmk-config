@@ -39,14 +39,14 @@
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&tog CHORDS>; \
             key-positions = <20 21 22 23>; \
-            layers = <0>; \
+            layers = <COLEMAK CHORDS>; \
       };
 
       combo_r_toggle_chords { \
             timeout-ms = <COMBO_TIMEOUT>; \
             bindings = <&tog CHORDS>; \
             key-positions = <26 27 28 29>; \
-            layers = <0>; \
+            layers = <COLEMAK CHORDS>; \
       };
 
     };
