@@ -30,6 +30,30 @@
 };
 
 / {
+    
+    behaviors {
+       
+        ht: tap_pref_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <120>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        lt_spc: layer_tap_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_MO_SPC";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&kp>;
+        };
+
+    };
 
     combos {
       compatible = "zmk,combos";
@@ -64,16 +88,16 @@
 &kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp RCTL &kp LALT &lt CHORDS SPACE &kp BSPC             &kp BSPC  &lt CHORDS SPACE &kp LALT  &kp RCTL
+&kp RCTL &kp LALT &lt_spc CHORDS SPACE &kp BSPC             &kp BSPC  &lt_spc CHORDS SPACE &kp LALT  &kp RCTL
                 >;
         };
 
         chord_layer {
                 bindings = <
 &kp R  &kp S  &kp N  &kp I  &kp TAB             &kp TAB  &kp I  &kp N  &kp S  &kp R
-&kp A  &kp O  &kp T  &kp E  &kp BSPC            &kp BSPC &kp E  &kp T  &kp O  &kp A
-&lt RAISE N8 &kp N4 &kp N2 &kp N1 &kp ESC             &kp ESC  &kp N1 &kp N2 &kp N4 &lt RAISE N8
- &kp LCTL &kp LALT &kp SPC  &kp LSHFT           &kp RSHFT  &kp SPC   &kp RALT   &kp RCTL
+&kp A  &kp O  &kp T  &kp E  &kp ENTER           &kp ENTER &kp E  &kp T  &kp O  &kp A
+&lt RAISE N8 &kp N4 &kp N2 &kp N1 &kp ESC       &kp ESC  &kp N1 &kp N2 &kp N4 &lt RAISE N8
+ &kp LCTL &kp LALT &kp SPC  &ht LSHFT BSPC      &ht RSHFT BSPC &kp SPC   &kp RALT   &kp RCTL
                 >;
         };
 

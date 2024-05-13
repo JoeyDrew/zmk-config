@@ -92,7 +92,6 @@ CHORD(COLON,  &kp COLON, 11 23, 18 26)
 // mod/control
 
 CHORD(LGUI,   &sk LGUI,  11 2 13,     16 7 18)
-CHORD(ENTER,  &kp ENTER, 10 11 12 13, 16 17 18 19)
 
 //layer
 
