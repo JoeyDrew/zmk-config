@@ -11,7 +11,7 @@
 
 // layers
 #define COLEMAK 0
-#define CHORD   1
+#define CHORDS   1
 #define RAISE 2
 
 // CONFIG
@@ -74,7 +74,7 @@
 
       combo_toggle_chord { \
             timeout-ms = <COMBO_TIMEOUT>; \
-            bindings = <&tog CHORD>; \
+            bindings = <&tog CHORDS>; \
             key-positions = <BRM BRR BRP>; \
             layers = <DEFAULT GAME>; \
         };
@@ -93,7 +93,7 @@
 &kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp RCTL &kp LALT &lt CHORD SPACE &kp BSPC             &kp BSPC  &lt CHORD SPACE &kp LALT  &kp RCTL
+&kp RCTL &kp LALT &lt CHORDS SPACE &kp BSPC             &kp BSPC  &lt CHORDS SPACE &kp LALT  &kp RCTL
                 >;
         };
 
