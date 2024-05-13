@@ -1,0 +1,103 @@
+#define CHORD(NAME, BINDINGS, LEFT_KEYPOS, RIGHT_KEYPOS) \
+combo_l_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BINDINGS>; \
+	key-positions = <LEFT_KEYPOS>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+combo_r_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BINDINGS>; \
+	key-positions = <RIGHT_KEYPOS>; \
+	layers = <COMBO_LAYERS>; \
+}; 
+
+//              LEFT                                 RIGHT
+//
+// | 0  |  1  |  2  |  3  |  4  |      |  5  |  6  |  7   |  8  |  9  |
+// | 10 |  11 |  12 |  13 |  14 |      |  15 |  16 |  17  |  18 |  19 |
+// | 20 |  21 |  22 |  23 |  24 |      |  25 |  26 |  27  |  28 |  29 |
+// |   30  |   31   |  32 |  33 |      |  34 |  35 |   36   |   37    |
+
+// alpha
+
+CHORD(C,      &kp C,     11 13,    16 18)
+CHORD(U,      &kp U,     11 12,    17 18)
+CHORD(Q,      &kp Q,     10 12 13, 16 17 19)
+CHORD(L,      &kp L,     10 11,    18 19)
+CHORD(Y,      &kp Y,     2 3,      6 7)
+CHORD(F,      &kp F,     10 12,    17 19)
+CHORD(P,      &kp P,     1 2,      7 8)
+CHORD(Z,      &kp Z,     0 2 3,    6 7 9)
+CHORD(B,      &kp B,     1 2 3,    6 7 8)
+CHORD(H,      &kp H,     12 13,    16 17)
+CHORD(D,      &kp D,     10 13,    16 19)
+CHORD(G,      &kp G,     0 1,      8 9)
+CHORD(X,      &kp X,     0 1 2,    7 8 9)
+CHORD(K,      &kp K,     10 11 12, 17 18 19)
+CHORD(V,      &kp V,     1 3,      6 8)
+CHORD(J,      &kp J,     0 2,      7 9)
+CHORD(M,      &kp M,     11 12 13, 16 17 18)
+CHORD(W,      &kp W,     0 3,      6 9)
+
+// num
+
+CHORD(N0,      &kp N0,   20 22,     27 29)
+CHORD(N3,      &kp N3,   22 23,     26 27)
+CHORD(N5,      &kp N5,   21 23,     26 28)
+CHORD(N6,      &kp N6,   21 22,     27 28)
+CHORD(N7,      &kp N7,   21 22 23,  26 27 28)
+CHORD(N9,      &kp N9,   20 23,     26 29)
+
+// fn
+
+CHORD(F1,      &kp F1,   30 23,     37 26)
+CHORD(F2,      &kp F2,   30 22,     37 27)
+CHORD(F3,      &kp F3,   30 22 23,  37 26 27)
+CHORD(F4,      &kp F4,   30 21,     37 28)
+CHORD(F5,      &kp F5,   30 21 23,  37 26 28)
+CHORD(F6,      &kp F6,   30 21 22,  37 27 28)
+CHORD(F7,      &kp F7,   30 21 22 23,  37 27 28 26)
+CHORD(F8,      &kp F8,   30 20,     37 29)
+CHORD(F9,      &kp F9,   30 20 23,  37 26 29)
+CHORD(F10,     &kp F10,  30 20 22,  37 27 29)
+CHORD(F11,     &kp F11,  30 20 22 23,  37 26 27 28)
+CHORD(F12,     &kp F12,  30 20 21,  37 28 29)
+
+// symbol
+
+CHORD(LT,  &kp LT,       22 13, 16 27)
+CHORD(GT,  &kp GT,       12 23, 26 17)
+CHORD(LBKT,  &kp LBKT,   20 11, 18 29)
+CHORD(RBKT,  &kp RBKT,   10 21, 28 19)
+CHORD(LBRC,  &kp LBRC,   21 12, 17 28)
+CHORD(RBRC,  &kp RBRC,   11 22, 27 18)
+CHORD(BSLH,  &kp BSLH,   1 12,  8 17)
+CHORD(PIPE,  &kp PIPE,   11 2,  7 18)
+CHORD(MINUS,  &kp MINUS, 1 13,  16 8)
+CHORD(UNDER,  &kp UNDER, 1 2 13, 16 7  8)
+CHORD(EQUAL,  &kp EQUAL, 11 23, 26 18)
+CHORD(PLUS,  &kp PLUS,   11 12 23, 26 17 18)
+CHORD(COMMA,  &kp COMMA, 2 13,  16 7)
+CHORD(DOT,  &kp DOT,     10 3,  6 19)
+CHORD(SLASH,  &kp SLASH, 10 2,  7 19)
+CHORD(QMARK,  &kp QMARK, 13 4,  17 6)
+CHORD(APOS,  &kp APOS,   10 1,  8 19)
+CHORD(DQT,  &kp DQT,     10 1 2, 7 8 19)
+CHORD(GRAVE,  &kp GRAVE, 20 13, 16 29)
+CHORD(TILDE,  &kp TILDE, 21 13, 16 28)
+CHORD(SEMI,  &kp SEMI,   10 22, 19 27)
+CHORD(COLON,  &kp COLON, 11 23, 18 26)
+
+// mod/control
+
+CHORD(LGUI,   &sk LGUI,  11 2 13,     16 7 18)
+CHORD(ENTER,  &kp ENTER, 10 11 12 13, 16 17 18 19)
+
+//layer
+
+CHORD(TOG_CHORD, &tog CHORD, 20 21 22 23, 26 27 28 29)
+
+// nav?
+CHORD(NAVL,      &kp LC(LEFT),  &kp LA(LEFT), &kp LG(LEFT), &none, LAR,  RAM)
+CHORD(NAVR,      &AVELC(RIGHT),  &kp LA(RIGHT), &kp LG(RIGHT), &none, LAM,  RAR)
