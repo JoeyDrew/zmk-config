@@ -33,10 +33,10 @@
     
     behaviors {
        
-        ht: tap_pref_hold_tap {
+        ht: balanced_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "balanced";
             tapping-term-ms = <400>;
             quick-tap-ms = <120>;
             bindings = <&kp>, <&kp>;
@@ -79,16 +79,11 @@
         compatible = "zmk,keymap";
 
         colemak_layer {
-// -----------------------------------------------------------------------------------------
-// | Q |  W  |  F  |  P  |  B |      |  J  |  L  |  U   |  Y  |  ;  |
-// | A |  R  |  S  |  T  |  G |      |  K  |  N  |  E   |  I  |  O  |
-// | Z |  X  |  C  |  D  |  V |      |  M  |  H  |  ,   |  .  |  /  |
-// |  CMD  |  CTL  |SHFT |BSPC|      |  HI | SPC |   TAIPO   |   RET   |
                 bindings = <
-&kp Q &kp W &kp F &kp P &kp B                    &kp J  &kp L &kp U  &kp Y     &kp SEMI  
-&kp A &kp R &kp S &kp T &kp G                    &kp K  &kp N &kp E  &kp I     &kp O  
-&kp Z &kp X &kp C &kp D &kp V                    &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp RCTL &kp LALT &lt_spc CHORDS SPACE &kp BSPC             &kp BSPC  &lt_spc CHORDS SPACE &kp LALT  &kp RCTL
+&kp Q &kp W &kp F &kp P &kp B                         &kp J  &kp L &kp U  &kp Y     &kp SEMI  
+&kp A &kp R &kp S &kp T &kp G                         &kp K  &kp N &kp E  &kp I     &kp O  
+&kp Z &kp X &kp C &kp D &kp V                         &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
+&kp RCTL &kp LALT &lt_spc CHORDS SPACE &kp BSPC       &ht RSHFT BSPC  &lt_spc CHORDS SPACE &kp LALT  &kp RCTL
                 >;
         };
 
