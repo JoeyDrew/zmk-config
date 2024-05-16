@@ -83,7 +83,7 @@
 &kp Q &kp W &kp F &kp P &kp B                         &kp J  &kp L &kp U  &kp Y     &kp SEMI  
 &kp A &kp R &kp S &kp T &kp G                         &kp K  &kp N &kp E  &kp I     &kp O  
 &kp Z &kp X &kp C &kp D &kp V                         &kp M  &kp H &kp COMMA  &kp DOT &kp SLASH
-&kp RCTL &kp LALT &lt_spc CHORDS SPACE &kp BSPC       &ht RSHFT BSPC  &lt_spc CHORDS SPACE &kp LALT  &kp RCTL
+&kp RCTL &kp LALT &lt_spc CHORDS SPACE &kp LSHFT      &kp LGUI  &lt_spc CHORDS SPACE &kp BSPC  &kp ENTER
                 >;
         };
 
