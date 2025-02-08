@@ -20,6 +20,7 @@
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
         label = "default_kscan";
 
         input-gpios = 
