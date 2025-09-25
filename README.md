@@ -1,6 +1,8 @@
 # Split38 zmk-config
 A 38-key split keyboard built around Nice!Nano boards.
 
+Split38's KiCad project is archived [here](https://github.com/JoeyDrew/split38).
+
 Current keymap:
 
 Inspired by [Taipo](https://inkeys.wiki/en/keymaps/taipo), this map has a Colemak mod-dh base layer alongside a momentary *or* togglable chorded layer.
